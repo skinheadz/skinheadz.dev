@@ -1,8 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"); */
 
-:root {
+/* TODO: FIX THE WHITE FLASH ON-LOAD. prob cuz of non-deployed non-built localhost */
+
+/* Browser-compatibility remove elements */
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+/* Support for dark theme */
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,14 +28,25 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* Set the default color to black and remove elements */
+html { 
+  appearance: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+  scrollbar-color: rgb(0, 0, 0) transparent;
+  background-color: rgb(0, 0, 0);
+  background: black;
+  /* background: linear-gradient(
+    to left top, 
+    rgb(26, 25, 25), 
+    rgb(26, 25, 25) 55%, 
+    rgb(178, 23, 23)
+  ); */
+  text-emphasis-color: #ffffff;
+  
+  }
+
+
+

@@ -1,3 +1,6 @@
+// NOTE: This file should not be edited
+// It's a router for components.
+
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 
